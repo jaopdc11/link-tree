@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+* {
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    background: linear-gradient(to top left, green, yellow);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    text-justify: center;
+    align-items: center;
+    margin-bottom: -10px;
+}
+
+.container {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 32px;
+    width: 350px;
+    height: 310px;
+    margin: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.github {
+    padding: 5px;
+}
+
+.github-img {
+    width: 32px;
+}
+
+.github:hover {
+    scale: 1.01;
+}
+
+.linkedin {
+    padding: 5px;
+}
+
+.linkedin-img {
+    width: 32px;
+}
+
+.linkedin:hover {
+    scale: 1.01;
+}
+
+.twitter {
+    padding: 5px;
+}
+
+.twitter-img {
+    width: 32px;
+    border-radius: 4px;
+}
+
+.twitter:hover {
+    scale: 1.01;
+}
+
+.profile {
+    padding: 5px;
+}
+
+.profile-img {
+    width: 32px;
+}
+
+.profile:hover {
+    scale: 1.01;
+}
+
+img {
+    margin-right: 5px;
+}
+
+label {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border: 5px solid black;
+    border-radius: 32px;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 32px;
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.links a img {
+    margin-right: 10px;
+}
+
+.links a.github {
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+.links a.linkedin {
+    margin-right: 20px;
+}
+
+.links a.twitter {
+    margin-right: 20px;
+}
+
+.links a.profile {
+    margin-right: 20px;
+}
+
+.links a img {
+    margin-right: 10px;
+  }
+  
+  .links a.github img {
+    margin-right: 110px;
+  }
+  
+  .links a.linkedin img {
+    margin-right: 100px;
+  }
+  
+  .links a.twitter img {
+    margin-right: 115px;
+  }
+  
+  .links a.profile img {
+    margin-right: 100px;
+  }
+
+.links p {
+    text-align: center;
+    font-size: 12px;
+    margin-top: -4px;
+    color: black;
+    font-weight: bold;
+}
