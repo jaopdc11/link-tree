@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .header a {
+            position: absolute;
+            left: 10px; /* Ajuste conforme necessário */
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            width: 28px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .header img:hover {
+            transform: translateX(-4px);
+        }
+    </style>
+    <title>Social Tree</title>
+</head>
+<body>
+
+    <div class="card">  <!-- Adicionei a div card para o quadrado voltar -->
+        <div class="header">
+            <a href="/main/index.html"><img src="/img/arrow.png" alt="left-arrow" draggable="false"></a>
+            <h2>PROJETOS</h2>
+        </div>
+
+        <div class="links">
+            <a href="https://jaopdc11.github.io/school-avg-calc/" target="_blank">
+                <img src="https://saojose.com.br/wp-content/uploads/2019/08/cropped-logo_csj_header-32x32.png" alt="gcsj-avg" draggable="false">
+                <span>CALCULADORA DE MÉDIAS CSJ</span>
+            </a>
+            
+            <a href="https://jaozzy.github.io/pife-pontos" target="_blank">
+                <img src="https://raw.githubusercontent.com/jaopdc11/pife-pontos/main/img/espadas.svg" alt="points-counter" draggable="false">
+                <span>CONTADOR DE PONTOS</span>
+            </a>
+            
+            <a href="https://jaopdc11.github.io/gestacao-calc" target="_blank">
+                <img src="https://raw.githubusercontent.com/jaopdc11/gestacao-calc/main/img/chupeta.svg" alt="folder-img" draggable="false">
+                <span>CALCULADORA DE GESTAÇÃO</span>
+            </a>
+            
+            <a href="https://jaozzy.github.io/investment-calculator" target="_blank">
+                <img src="https://raw.githubusercontent.com/jaopdc11/investment-calculator/main/img/icon.ico" alt="profile-img" draggable="false">
+                <span>CALCULADORA DE RENDA</span>
+            </a>
+            
+            <a href="#" target="_blank">
+                <img src="/img/clock.png" alt="working-img" draggable="false">
+                <span>EM ANDAMENTO...</span>
+            </a>
+        </div>
+
+        <p class="copyright">&copy; 2025 João Pedro. Todos os direitos reservados.</p>
+    </div>
+
+</body>
+</html>

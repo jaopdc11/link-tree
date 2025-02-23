@@ -1,0 +1,83 @@
+/* Fundo com gradiente */
+body {
+    background: linear-gradient(135deg, #2A2A72, #009FFD);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+/* Container principal */
+.card {
+    background: rgba(0, 0, 0, 0.8); /* Fundo escuro com transparência */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    backdrop-filter: blur(10px); /* Efeito de vidro */
+    border-radius: 15px;
+    padding: 25px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Título */
+h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Centralizando os links */
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Ajustando os botões para alinhamento uniforme */
+.links a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    width: 250px;
+    height: 60px;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+    padding-left: 20px; /* Espaçamento para alinhar o texto */
+    gap: 15px; /* Espaço entre o ícone e o texto */
+}
+
+/* Garantindo que todos os ícones tenham o mesmo tamanho */
+img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Hover nos botões */
+.links a:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Efeito ao pressionar */
+.links a:active {
+    transform: scale(0.95);
+}
+
+/* Copyright */
+.copyright {
+    font-size: 0.9em;
+    margin-top: 15px;
+    opacity: 0.7;
+}
