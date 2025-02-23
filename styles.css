@@ -10,6 +10,10 @@ body {
     color: white;
 }
 
+.white-img {
+    filter: invert(1);
+}
+
 /* Container principal */
 .card {
     background: rgba(0, 0, 0, 0.8); /* Fundo escuro com transparência */
