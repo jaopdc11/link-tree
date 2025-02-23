@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
     <style>
         .header {
             display: flex;
@@ -12,6 +12,10 @@
             justify-content: center;
             position: relative;
             width: 100%;
+        }
+
+        #points {
+            filter: invert(1);
         }
 
         .header a {
@@ -32,14 +36,14 @@
             transform: translateX(-4px);
         }
     </style>
-    <link rel="icon" type="image/png" href="..img/chain.png">
+    <link rel="icon" type="image/png" href="..img/chain.svg">
     <title>Social Tree</title>
 </head>
 <body>
 
     <div class="card">  <!-- Adicionei a div card para o quadrado voltar -->
         <div class="header">
-            <a href="/main/index.html"><img src="../img/arrow.png" alt="left-arrow" draggable="false"></a>
+            <a href="/main/index.html"><img src="../img/arrow.svg" alt="left-arrow" draggable="false"></a>
             <h2>PROJETOS</h2>
         </div>
 
@@ -50,7 +54,7 @@
             </a>
             
             <a href="https://jaozzy.github.io/pife-pontos" target="_blank">
-                <img src="https://raw.githubusercontent.com/jaopdc11/pife-pontos/main/img/espadas.svg" alt="points-counter" draggable="false">
+                <img src="https://raw.githubusercontent.com/jaopdc11/pife-pontos/main/img/espadas.svg" id="points" alt="points-counter" draggable="false">
                 <span>CONTADOR DE PONTOS</span>
             </a>
             
@@ -65,7 +69,7 @@
             </a>
             
             <a href="#" target="_blank">
-                <img src="../img/clock.png" alt="working-img" draggable="false">
+                <img src="../img/clock.svg" alt="working-img" draggable="false">
                 <span>EM ANDAMENTO...</span>
             </a>
         </div>
