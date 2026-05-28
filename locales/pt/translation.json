@@ -1,0 +1,23 @@
+{
+  "profile": {
+    "role": "Engenheiro Fullstack",
+    "status": "Disponível para projetos"
+  },
+  "links": {
+    "portfolio": "Portfólio",
+    "projects": "Projetos",
+    "lessons": "Aulas Particulares",
+    "resume": "Currículo",
+    "whatsapp": "WhatsApp",
+    "email": "Email"
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Ferramentas e apps simples",
+    "page": "Página",
+    "of": "de",
+    "footer": "{{count}} projetos • © 2026 João Pedro",
+    "comingSoon": "Em desenvolvimento..."
+  },
+  "footer": "© 2026 João Pedro"
+}
