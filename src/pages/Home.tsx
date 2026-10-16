@@ -1,4 +1,6 @@
 import { User, Folder, GraduationCap, FileText, MessageCircle, Mail, ChevronRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from '../components/LanguageSwitcher'
 
 function GitHubIcon() {
   return (
@@ -16,46 +18,49 @@ function LinkedInIcon() {
   )
 }
 
-const links = [
-  {
-    label: 'Portfólio',
-    icon: <User size={17} />,
-    color: '#a78bfa',
-    href: 'https://jaopd.dev',
-  },
-  {
-    label: 'Projetos',
-    icon: <Folder size={17} />,
-    color: '#fb923c',
-    isProjects: true,
-  },
-  {
-    label: 'Aulas Particulares',
-    icon: <GraduationCap size={17} />,
-    color: '#34d399',
-    href: 'https://aulas.jaopd.dev',
-  },
-  {
-    label: 'Currículo',
-    icon: <FileText size={17} />,
-    color: '#f87171',
-    href: '#',
-  },
-  {
-    label: 'WhatsApp',
-    icon: <MessageCircle size={17} />,
-    color: '#4ade80',
-    href: 'https://api.whatsapp.com/send/?phone=5547999783190&text=Ol%C3%A1+Jo%C3%A3o+Pedro%2C+visitei+seu+Linktree+e+gostaria+de+conversar+sobre+oportunidades+ou+projetos.&type=phone_number&app_absent=0',
-  },
-  {
-    label: 'Email',
-    icon: <Mail size={17} />,
-    color: '#facc15',
-    href: 'mailto:servicecontact.joao@gmail.com',
-  },
-]
-
 export default function Home({ onNavigateProjects }: { onNavigateProjects: () => void }) {
+  const { t, i18n } = useTranslation()
+  const isPT = i18n.language.startsWith('pt')
+
+  const links = [
+    {
+      label: t('links.portfolio'),
+      icon: <User size={17} />,
+      color: '#a78bfa',
+      href: 'https://jaopd.dev',
+    },
+    {
+      label: t('links.projects'),
+      icon: <Folder size={17} />,
+      color: '#fb923c',
+      isProjects: true,
+    },
+    {
+      label: t('links.lessons'),
+      icon: <GraduationCap size={17} />,
+      color: '#34d399',
+      href: 'https://aulas.jaopd.dev',
+    },
+    {
+      label: t('links.resume'),
+      icon: <FileText size={17} />,
+      color: '#f87171',
+      href: isPT ? 'https://jaopd.dev/cv-pt.pdf' : 'https://jaopd.dev/cv-en.pdf',
+    },
+    {
+      label: t('links.whatsapp'),
+      icon: <MessageCircle size={17} />,
+      color: '#4ade80',
+      href: 'https://api.whatsapp.com/send/?phone=5547999783190&text=Ol%C3%A1+Jo%C3%A3o+Pedro%2C+visitei+seu+Linktree+e+gostaria+de+conversar+sobre+oportunidades+ou+projetos.&type=phone_number&app_absent=0',
+    },
+    {
+      label: t('links.email'),
+      icon: <Mail size={17} />,
+      color: '#facc15',
+      href: 'mailto:servicecontact.joao@gmail.com',
+    },
+  ]
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -65,6 +70,9 @@ export default function Home({ onNavigateProjects }: { onNavigateProjects: () =>
       justifyContent: 'center',
       padding: '56px 20px',
     }}>
+      <div style={{ position: 'fixed', top: '16px', right: '16px', zIndex: 50 }}>
+        <LanguageSwitcher />
+      </div>
       <div className="link-container" style={{ width: '100%', maxWidth: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
 
         {/* Hero glow */}
@@ -82,10 +90,10 @@ export default function Home({ onNavigateProjects }: { onNavigateProjects: () =>
         {/* Profile */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', position: 'relative' }}>
           <h1 className="profile-name">João Pedro</h1>
-          <p className="profile-role">Desenvolvedor Full Stack</p>
+          <p className="profile-role">{t('profile.role')}</p>
           <div className="status-badge">
             <span className="status-dot" />
-            Disponível para projetos
+            {t('profile.status')}
           </div>
         </div>
 
@@ -132,32 +140,34 @@ export default function Home({ onNavigateProjects }: { onNavigateProjects: () =>
         <div className="divider" />
 
         {/* Social row */}
-        <div style={{ width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-          <a
-            href="https://github.com/jaopdc11"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card-social"
-            style={{ color: '#CBD5E1' }}
-          >
-            <GitHubIcon />
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/joaopedrodevcs/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card-social"
-            style={{ color: '#06B6D4' }}
-          >
-            <LinkedInIcon />
-            LinkedIn
-          </a>
+        <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+            <a
+              href="https://github.com/jaopdc11"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-social"
+              style={{ color: '#CBD5E1' }}
+            >
+              <GitHubIcon />
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/joaopedrodevcs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-social"
+              style={{ color: '#06B6D4' }}
+            >
+              <LinkedInIcon />
+              LinkedIn
+            </a>
+          </div>
         </div>
 
         {/* Footer */}
         <p style={{ fontSize: '11px', color: '#334155', letterSpacing: '0.2px' }}>
-          © 2026 João Pedro
+          {t('footer')}
         </p>
 
       </div>

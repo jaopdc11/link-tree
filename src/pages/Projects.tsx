@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import { ArrowLeft, ArrowRight, ChevronLeft } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { projects, PROJECTS_PER_PAGE } from '../data/projects'
 
 export default function Projects({ onBack }: { onBack: () => void }) {
   const [page, setPage] = useState(1)
+  const { t, i18n } = useTranslation()
+  const isEN = i18n.language.startsWith('en')
 
   const totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE)
   const start = (page - 1) * PROJECTS_PER_PAGE
   const pageProjects = projects.slice(start, start + PROJECTS_PER_PAGE)
+  const activeCount = projects.filter(p => p.status !== 'coming-soon').length
 
   return (
     <div style={{
@@ -35,10 +39,10 @@ export default function Projects({ onBack }: { onBack: () => void }) {
           </button>
           <div>
             <h1 style={{ fontSize: '17px', fontWeight: 600, color: '#f0f0f8', letterSpacing: '-0.3px' }}>
-              Projetos
+              {t('projects.title')}
             </h1>
             <p style={{ fontSize: '12px', color: '#6b7080', marginTop: '2px' }}>
-              Ferramentas e apps simples
+              {t('projects.subtitle')}
             </p>
           </div>
         </div>
@@ -52,6 +56,13 @@ export default function Projects({ onBack }: { onBack: () => void }) {
               ? (project.logo.startsWith('http') ? project.logo : project.url + project.logo)
               : null
 
+            const name = isEN && project.name_en ? project.name_en : project.name
+            const description = isComingSoon
+              ? t('projects.comingSoon')
+              : isEN && project.description_en
+                ? project.description_en
+                : project.description
+
             const inner = (
               <div className="card-inner">
                 <div className="icon-box" style={{
@@ -61,7 +72,7 @@ export default function Projects({ onBack }: { onBack: () => void }) {
                   {logoSrc ? (
                     <img
                       src={logoSrc}
-                      alt={project.name}
+                      alt={name}
                       style={{
                         width: '22px', height: '22px', objectFit: 'contain',
                         filter: isComingSoon ? 'grayscale(1) opacity(0.25)' : 'none',
@@ -78,7 +89,7 @@ export default function Projects({ onBack }: { onBack: () => void }) {
                     color: isComingSoon ? '#3d404d' : '#f0f0f8',
                     margin: 0,
                   }}>
-                    {project.name}
+                    {name}
                   </p>
                   <p style={{
                     fontSize: '12px', marginTop: '2px',
@@ -86,7 +97,7 @@ export default function Projects({ onBack }: { onBack: () => void }) {
                     color: isComingSoon ? '#2a2d38' : isMaintenance ? '#f59e0b' : '#6b7080',
                     margin: '2px 0 0',
                   }}>
-                    {project.description}
+                    {description}
                   </p>
                 </div>
               </div>
@@ -134,8 +145,8 @@ export default function Projects({ onBack }: { onBack: () => void }) {
             <ArrowLeft size={14} />
           </button>
           <span style={{ fontSize: '13px', color: '#6b7080' }}>
-            Página <strong style={{ color: '#d1d5db', fontWeight: 600 }}>{page}</strong>
-            {' '}de{' '}
+            {t('projects.page')} <strong style={{ color: '#d1d5db', fontWeight: 600 }}>{page}</strong>
+            {' '}{t('projects.of')}{' '}
             <strong style={{ color: '#d1d5db', fontWeight: 600 }}>{totalPages}</strong>
           </span>
           <button
@@ -156,7 +167,7 @@ export default function Projects({ onBack }: { onBack: () => void }) {
 
         {/* Footer */}
         <p style={{ fontSize: '11px', color: '#475569', textAlign: 'center', letterSpacing: '0.2px' }}>
-          {projects.filter(p => p.status !== 'coming-soon').length} projetos • © 2026 João Pedro
+          {t('projects.footer', { count: activeCount })}
         </p>
 
       </div>
